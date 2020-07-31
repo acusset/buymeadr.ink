@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+    app:
+        image: node:14.6
+        container_name: node_app
+        environment:
+            - NODE_PORT=8080
+            - NODE_HOST=0.0.0.0
+            - NODE_ENV=production
+        working_dir: /usr/src/app
+        command: bash -c "npm install && npm run start"
+        volumes:
+            - ./app:/usr/src/app:delegated
+            - node_modules:/usr/src/app/node_modules
+        ports:
+            - 8080:8080
+
+volumes:
+    node_modules:

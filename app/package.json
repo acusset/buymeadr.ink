@@ -1,0 +1,16 @@
+{
+    "name": "buymeadr.ink",
+    "version": "0.0.1",
+    "description": "Buy me a drink",
+    "author": "First Last <first.last@example.com>",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.16.*"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.10"
+    }
+}
