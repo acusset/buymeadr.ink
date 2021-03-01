@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    node:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                NODE_VERSION: '15.10'
+                NPM_VERSION: '7.6.0'
+        ports:
+            - 8080:8080
+        restart: unless-stopped
+        environment:
+            NODE_ENV: dev
+        volumes:
+            - .:/home/node/app:cached
+            - node_modules:/home/node/app/node_modules:delegated
+
+volumes:
+    node_modules:
