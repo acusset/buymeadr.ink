@@ -8,20 +8,19 @@ RUN apk add --update --no-cache \
     git \
     vim
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+RUN mkdir -p /home/node/buymeadr.ink/app/node_modules && \
+ chown -R node:node /home/node/buymeadr.ink/app
 
-RUN npm install -g nodemon
+RUN npm install -g nodemon express-generator
 
 USER node
 
-WORKDIR /home/node/app
+WORKDIR /home/node/buymeadr.ink/app
 
-COPY package*.json ./
-
-COPY --chown=node:node . .
+COPY --chown=node:node app/package*.json ./
 
 RUN npm install
 
 EXPOSE 8080
 
-CMD [ "nodemon" ]
+CMD [ "nodemon", "app/" ]

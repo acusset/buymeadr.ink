@@ -14,8 +14,8 @@ services:
         environment:
             NODE_ENV: dev
         volumes:
-            - .:/home/node/app:cached
-            - node_modules:/home/node/app/node_modules:delegated
+            - ./app:/home/node/buymeadr.ink/app:delegated
+            - modules:/home/node/buymeadr.ink/app/node_modules
 
 volumes:
-    node_modules:
+    modules:
