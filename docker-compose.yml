@@ -15,7 +15,4 @@ services:
             NODE_ENV: dev
         volumes:
             - ./app:/home/node/buymeadr.ink/app:delegated
-            - modules:/home/node/buymeadr.ink/app/node_modules
-
-volumes:
-    modules:
+            - /home/node/buymeadr.ink/app/node_modules

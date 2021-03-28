@@ -19,6 +19,8 @@ WORKDIR /home/node/buymeadr.ink/app
 
 COPY --chown=node:node app/package*.json ./
 
+COPY --chown=node:node docker-entrypoint.sh ./
+
 RUN npm install
 
 EXPOSE 8080
