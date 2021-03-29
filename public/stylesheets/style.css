@@ -1,5 +1,5 @@
 body {
-  background-image: url('/images/svg/Wintery-Sunburst.svg');
+  background-image: url('/images/svg/background.svg');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: repeat;
@@ -34,4 +34,17 @@ svg:hover {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.rotate {
+  animation: rotation 3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

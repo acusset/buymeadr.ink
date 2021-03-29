@@ -2,7 +2,11 @@
   "name": "app",
   "version": "0.0.0",
   "private": true,
+  "start": "node ./bin/www",
   "scripts": {
+    "build": "npm install",
+    "dev": "nodemon ./bin/www",
+    "test": "echo 'Nothing to test yet.'",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -12,5 +16,9 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "engines": {
+    "node": "v15.10.0", 
+    "npm": "7.7.5"
   }
 }
