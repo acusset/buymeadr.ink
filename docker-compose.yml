@@ -4,15 +4,13 @@ services:
     node:
         build:
             context: .
-            dockerfile: Dockerfile
-            args:
-                NODE_VERSION: '15.10'
-                NPM_VERSION: '7.6.0'
+            args: # from .env file
+                NODE_VERSION: ${NODE_VERSION}
+                NPM_VERSION: ${NPM_VERSION}
+                HTTP_PORT: ${HTTP_PORT}
         ports:
-            - 8080:8080
+            - ${HTTP_PORT}:${HTTP_PORT}
         restart: unless-stopped
-        environment:
-            NODE_ENV: dev
         volumes:
-            - ./app:/home/node/buymeadr.ink/app:delegated
-            - /home/node/buymeadr.ink/app/node_modules
+            - .:/home/node/buymeadr.ink:delegated
+            - /home/node/buymeadr.ink/node_modules

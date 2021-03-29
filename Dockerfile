@@ -1,5 +1,6 @@
-ARG NODE_VERSION=15.10
-ARG NPM_VERSION=7.7.5
+ARG NODE_VERSION
+ARG NPM_VERSION
+ARG HTTP_PORT
 
 FROM node:${NODE_VERSION}-alpine
 
@@ -19,10 +20,8 @@ WORKDIR /home/node/buymeadr.ink
 
 COPY --chown=node:node package*.json ./
 
-# COPY --chown=node:node docker-entrypoint.sh ./
-
 RUN npm install
 
-EXPOSE 8080
+EXPOSE ${HTTP_PORT}
 
-CMD [ "npm", "run dev" ]
+CMD [ "npm", "run", "dev"]

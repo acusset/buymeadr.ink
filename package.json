@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "version": "0.0.0",
+  "name": "buymeadr.ink",
+  "version": "0.1.0",
   "private": true,
   "start": "node ./bin/www",
   "scripts": {
