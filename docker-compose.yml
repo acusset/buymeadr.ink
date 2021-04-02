@@ -8,6 +8,9 @@ services:
                 NODE_VERSION: ${NODE_VERSION}
                 NPM_VERSION: ${NPM_VERSION}
                 HTTP_PORT: ${HTTP_PORT}
+        environment:
+            HTTP_PORT: ${HTTP_PORT}
+            STRIPE_API_KEY: ${STRIPE_API_KEY}
         ports:
             - ${HTTP_PORT}:${HTTP_PORT}
         restart: unless-stopped
