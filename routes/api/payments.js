@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.STRIPE_API_KEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_API_KEY)
 const router = require('express').Router();
 
 /** Create paiment session */
@@ -7,10 +7,11 @@ router.post('/create-checkout-session', async (req, res) => {
     payment_method_types: ['card'],
     line_items: [
       {
+        description: 'A pint of fresh beer of my choice.',
         price_data: {
           currency: 'sgd',
           product_data: {
-            name: 'Pint of beer of my choice',
+            name: 'Beer',
           },
           unit_amount: 1200,
         },

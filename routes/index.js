@@ -56,7 +56,13 @@ const drinks = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Buy me a drink', drink: drinks[getRandomInt(drinks.length)] });
+  res.render('index', 
+  {
+     title: 'Buy me a drink',
+     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_API_KEY,
+     drink: drinks[getRandomInt(drinks.length)] 
+    }
+    );
 });
 
 // Placeholder for success after checkout
