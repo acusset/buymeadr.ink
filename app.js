@@ -5,7 +5,7 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 let indexRouter = require('./routes/index');
-let paymentsRouter = require('./routes/payments');
+let paymentsRouter = require('./routes/api/payments');
 
 let app = express();
 

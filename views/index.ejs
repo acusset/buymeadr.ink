@@ -4,12 +4,45 @@
     <link rel="icon" href="/images/svg/<%-  drink -%>">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/bulma.min.css">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-<%- include('../public/images/svg/' + drink) %>
+    <div id="checkout-button">
+        <%- include('../public/images/svg/' + drink) %>
+    </div>
 <div style="position: fixed; left: 0; bottom: 0;">
     Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
     Background made by <a href="https://www.svgbackgrounds.com/#wintery-sunburst" title="SVG Backgrounds">www.svgbackgrounds.com</a>
 </div>
+<script type="text/javascript">
+    // Create an instance of the Stripe object with your publishable API key
+    var stripe = Stripe('pk_test_51IaZU2BRHl8hMc3AsA6YnHkmEqW3vlIqaz3AfwRhEFohyhCuyIKg1Wu66pVJGReMiFuGv9hL09LMMKzeD9fh0SK900WQ4KhMpI');
+    var checkoutButton = document.getElementById('checkout-button');
+
+    checkoutButton.addEventListener('click', function() {
+      // Create a new Checkout Session using the server-side endpoint you
+      // created in step 3.
+      fetch('/payments/create-checkout-session', {
+        method: 'POST',
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(session) {
+        return stripe.redirectToCheckout({ sessionId: session.id });
+      })
+      .then(function(result) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, you should display the localized error message to your
+        // customer using `error.message`.
+        if (result.error) {
+          alert(result.error.message);
+        }
+      })
+      .catch(function(error) {
+        console.error('Error:', error);
+      });
+    });
+  </script>
 </body>
 </html>
