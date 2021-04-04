@@ -27,8 +27,10 @@ router.post('/create-checkout-session', async (req, res) => {
 });
 
 function getBaseUrl () {
-  const protocol = process.env.NODE_ENV == 'dev' ? 'http://' : 'https://'
-  return protocol + process.env.BASE_URL + ':' + (process.env.HTTP_PORT || '80') + '/';
+  const protocol = process.env.NODE_ENV == 'dev' ? 'http://' : 'https://';
+  const port = process.env.HTTP_PORT == '80' ? '' : (':'+ process.env.HTTP_PORT);
+  
+  return protocol + process.env.BASE_URL + port + '/';
 }
 
 module.exports = router;
