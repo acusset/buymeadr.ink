@@ -9,7 +9,9 @@ services:
                 NPM_VERSION: ${NPM_VERSION}
                 HTTP_PORT: ${HTTP_PORT}
         environment:
+            NODE_ENV: ${NODE_ENV}
             HTTP_PORT: ${HTTP_PORT}
+            BASE_URL: ${BASE_URL}
             STRIPE_API_KEY: ${STRIPE_API_KEY}
         ports:
             - ${HTTP_PORT}:${HTTP_PORT}

@@ -59,6 +59,17 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Buy me a drink', drink: drinks[getRandomInt(drinks.length)] });
 });
 
+// Placeholder for success after checkout
+router.get('/success', (req, res, next) => {
+  res.redirect('/');
+});
+
+// Placeholder for error after checkout
+router.get('/error', (req, res, next) => {
+  res.redirect('/');
+});
+
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
