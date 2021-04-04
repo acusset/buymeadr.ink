@@ -12,7 +12,8 @@ services:
             NODE_ENV: ${NODE_ENV}
             HTTP_PORT: ${HTTP_PORT}
             BASE_URL: ${BASE_URL}
-            STRIPE_API_KEY: ${STRIPE_API_KEY}
+            STRIPE_SECRET_API_KEY: ${STRIPE_SECRET_API_KEY}
+            STRIPE_PUBLISHABLE_API_KEY: ${STRIPE_PUBLISHABLE_API_KEY}
         ports:
             - ${HTTP_PORT}:${HTTP_PORT}
         restart: unless-stopped
