@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_API_KEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_API_KEY);
 const router = require('express').Router();
 
 /** Create paiment session */
@@ -23,7 +23,7 @@ router.post('/create-checkout-session', async (req, res) => {
     cancel_url: getBaseUrl() + 'cancel',
   });
 
-  res.json({ id: session.id });
+  res.json({id: session.id});
 });
 
 function getBaseUrl () {

@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const drinks = [
   '001-kombucha.svg',
@@ -51,18 +51,18 @@ const drinks = [
   '047-water.svg',
   '048-cocktail shaker.svg',
   '049-cream soda.svg',
-  '050-orange juice.svg'
-]
+  '050-orange juice.svg',
+];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', 
-  {
-     title: 'Buy me a drink',
-     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_API_KEY,
-     drink: drinks[getRandomInt(drinks.length)] 
-    }
-    );
+  res.render('index',
+      {
+        title: 'Buy me a drink',
+        stripePublishableKey: process.env.STRIPE_PUBLISHABLE_API_KEY,
+        drink: drinks[getRandomInt(drinks.length)],
+      },
+  );
 });
 
 // Placeholder for success after checkout
