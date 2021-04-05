@@ -1,1 +1,2 @@
+#!/bin/bash
 docker-compose exec --user node node /usr/local/bin/npm "$@"
