@@ -75,6 +75,10 @@ router.get('/error', (req, res, next) => {
   res.redirect('/');
 });
 
+// Placeholder for cancel before checkout
+router.get('/cancel', (req, res, next) => {
+  res.redirect('/');
+});
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
