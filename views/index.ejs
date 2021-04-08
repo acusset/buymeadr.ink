@@ -15,10 +15,8 @@
     Background made by <a href="https://www.svgbackgrounds.com/#wintery-sunburst" title="SVG Backgrounds">www.svgbackgrounds.com</a>
 </div>
 <script type="text/javascript">
-    // Create an instance of the Stripe object with your publishable API key
-    const stripeKey = '<%- stripePublishableKey %>';
-    var stripe = Stripe('pk_test_51IaZU2BRHl8hMc3AsA6YnHkmEqW3vlIqaz3AfwRhEFohyhCuyIKg1Wu66pVJGReMiFuGv9hL09LMMKzeD9fh0SK900WQ4KhMpI');
-    var checkoutButton = document.getElementById('checkout-button');
+    const stripe = Stripe('<%- stripePublishableKey %>');
+    let checkoutButton = document.getElementById('checkout-button');
 
     checkoutButton.addEventListener('click', function() {
       fetch('/payments/create-checkout-session', {
