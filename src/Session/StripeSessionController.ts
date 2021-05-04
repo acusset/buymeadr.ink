@@ -1,4 +1,5 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Body, Header, Options } from '@nestjs/common';
+import Product from '../Product';
 import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY, {
@@ -8,35 +9,35 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY, {
 @Controller('session')
 export class StripeSessionController {
   @Post()
-  async getSessionId() {
+  @Header('Access-Control-Allow-Origin', process.env.FRONT_URL)
+  @Header('Access-Control-Allow-Headers', 'Accept, Content-Type')
+  async getSessionId(@Body() product: Product) {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
         {
-          description: 'A pint of fresh beer of my choice.',
+          description: product.description,
           price_data: {
             currency: 'sgd',
             product_data: {
-              name: 'Beer',
+              name: product.name,
             },
-            unit_amount: 1200,
+            unit_amount: product.price,
           },
           quantity: 1,
         },
       ],
       mode: 'payment',
-      success_url: this.getBaseUrl() + '?success=true',
-      cancel_url: this.getBaseUrl() + '?success=false',
+      success_url: 'https://' + process.env.FRONT_URL + '/?success=true',
+      cancel_url: 'https://' + process.env.FRONT_URL + '?success=false',
     });
 
     return { id: session.id };
   }
 
-  // Put in a service
-  getBaseUrl(): string {
-    const protocol = process.env.NODE_ENV == 'dev' ? 'http://' : 'https://';
-    const port =
-      process.env.HTTP_PORT == '80' ? '' : ':' + process.env.HTTP_PORT;
-    return protocol + process.env.BASE_URL + port + '/';
-  }
+  // Handles Preflight CORS Requests
+  @Options()
+  @Header('Access-Control-Allow-Origin', process.env.FRONT_URL)
+  @Header('Access-Control-Allow-Headers', 'Accept, Content-Type')
+  async preflight() {}
 }

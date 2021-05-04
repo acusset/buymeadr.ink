@@ -12,7 +12,7 @@ RUN apk add --update --no-cache \
 RUN mkdir -p /home/node/buymeadr.ink/node_modules && \
  chown -R node:node /home/node/buymeadr.ink
 
-RUN npm install i -g npm@${NPM_VERSION} @nestjs/cli
+RUN npm install -g npm@${NPM_VERSION} @nestjs/cli
 
 USER node
 
@@ -24,4 +24,4 @@ RUN npm install
 
 EXPOSE ${HTTP_PORT}
 
-CMD [ "npm", "run", "start:dev"]
+CMD [ "npm", "run", "start:prod"]
