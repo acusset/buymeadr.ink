@@ -1,7 +1,8 @@
 version: '3.8'
 
 services:
-    node:
+    back:
+        container_name: nest
         build:
             context: .
             args: # from .env file
@@ -11,12 +12,11 @@ services:
         environment:
             NODE_ENV: ${NODE_ENV}
             HTTP_PORT: ${HTTP_PORT}
-            BASE_URL: ${BASE_URL}
+            FRONT_URL: ${FRONT_URL}
             STRIPE_SECRET_API_KEY: ${STRIPE_SECRET_API_KEY}
-            STRIPE_PUBLISHABLE_API_KEY: ${STRIPE_PUBLISHABLE_API_KEY}
+        command: [ "npm", "run", "start:dev" ]
         ports:
             - ${HTTP_PORT}:${HTTP_PORT}
-        restart: unless-stopped
         volumes:
             - .:/home/node/buymeadr.ink:delegated
             - /home/node/buymeadr.ink/node_modules
