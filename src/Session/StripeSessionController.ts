@@ -28,8 +28,8 @@ export class StripeSessionController {
         },
       ],
       mode: 'payment',
-      success_url: 'https://' + process.env.FRONT_URL + '/?success=true',
-      cancel_url: 'https://' + process.env.FRONT_URL + '?success=false',
+      success_url: process.env.FRONT_URL + '?success=true',
+      cancel_url: process.env.FRONT_URL + '?success=false',
     });
 
     return { id: session.id };
