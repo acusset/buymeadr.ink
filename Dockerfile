@@ -1,6 +1,6 @@
 ARG NODE_VERSION
 ARG NPM_VERSION
-ARG HTTP_PORT
+ARG PORT
 
 FROM node:${NODE_VERSION}-alpine
 
@@ -22,6 +22,6 @@ COPY --chown=node:node package*.json ./
 
 RUN npm install
 
-EXPOSE ${HTTP_PORT}
+EXPOSE ${PORT}
 
 CMD [ "npm", "run", "start:prod"]

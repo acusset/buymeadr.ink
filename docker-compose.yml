@@ -8,15 +8,15 @@ services:
             args: # from .env file
                 NODE_VERSION: ${NODE_VERSION}
                 NPM_VERSION: ${NPM_VERSION}
-                HTTP_PORT: ${HTTP_PORT}
+                PORT: ${PORT}
         environment:
             NODE_ENV: ${NODE_ENV}
-            HTTP_PORT: ${HTTP_PORT}
+            PORT: ${PORT}
             FRONT_URL: ${FRONT_URL}
             STRIPE_SECRET_API_KEY: ${STRIPE_SECRET_API_KEY}
         command: [ "npm", "run", "start:dev" ]
         ports:
-            - ${HTTP_PORT}:${HTTP_PORT}
+            - ${PORT}:${PORT}
         volumes:
             - .:/home/node/buymeadr.ink:delegated
             - /home/node/buymeadr.ink/node_modules
