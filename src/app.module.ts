@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { StripeSessionController } from './Session/StripeSessionController';
+import { StripeModule } from './Stripe/StripeModule'
 
 @Module({
-  imports: [],
-  controllers: [StripeSessionController],
+  imports: [ StripeModule ],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}

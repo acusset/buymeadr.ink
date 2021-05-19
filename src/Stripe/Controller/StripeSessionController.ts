@@ -9,8 +9,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY, {
 @Controller('session')
 export class StripeSessionController {
   @Post()
-  @Header('Access-Control-Allow-Origin', process.env.FRONT_URL)
-  @Header('Access-Control-Allow-Headers', 'Accept, Content-Type')
   async getSessionId(@Body() product: Product) {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -37,7 +35,5 @@ export class StripeSessionController {
 
   // Handles Preflight CORS Requests
   @Options()
-  @Header('Access-Control-Allow-Origin', process.env.FRONT_URL)
-  @Header('Access-Control-Allow-Headers', 'Accept, Content-Type')
   async preflight() {}
 }
