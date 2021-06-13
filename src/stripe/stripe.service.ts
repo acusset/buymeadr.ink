@@ -1,16 +1,20 @@
-import { Controller, Post, Body, Header, Options } from '@nestjs/common';
-import Product from '../Product';
+import { Injectable } from '@nestjs/common';
+import { Product } from 'src/products/product.model';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY, {
-  apiVersion: '2020-08-27',
-});
+@Injectable()
+export class StripeService {
+  private stripe: Stripe;
 
-@Controller('session')
-export class StripeSessionController {
-  @Post()
-  async getSessionId(@Body() product: Product) {
-    const session = await stripe.checkout.sessions.create({
+  constructor() {
+    this.stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY, {
+      apiVersion: '2020-08-27',
+    });
+  }
+
+  // Todo create a session from a cart
+  public async createSession(product: Product) {
+    return await this.stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
         {
@@ -29,11 +33,5 @@ export class StripeSessionController {
       success_url: process.env.FRONT_URL + '?success=true',
       cancel_url: process.env.FRONT_URL + '?success=false',
     });
-
-    return { id: session.id };
   }
-
-  // Handles Preflight CORS Requests
-  @Options()
-  async preflight() {}
 }

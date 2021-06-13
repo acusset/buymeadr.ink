@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { StripeModule } from './Stripe/StripeModule'
+import { ProductModule } from './products/product.module';
+import { StripeModule } from './stripe/stripe.module';
 
 @Module({
-  imports: [ StripeModule ],
+  imports: [StripeModule, ProductModule],
   controllers: [],
   providers: [],
 })
