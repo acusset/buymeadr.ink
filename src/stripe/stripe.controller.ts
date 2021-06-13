@@ -1,4 +1,11 @@
-import { Controller, Post, Body, Header, Options } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Header,
+  Options,
+  ParseUUIDPipe,
+} from '@nestjs/common';
 import { StripeService } from 'src/stripe/stripe.service';
 import { Product, GetProduct } from 'src/products/product.model';
 import { ProductsService } from 'src/products/products.service';
@@ -12,8 +19,10 @@ export class StripeController {
   ) {}
 
   @Post('/session')
-  private async createSession(@Body() productDTO: GetProduct) {
-    let product: Product = this.productService.findOneById(productDTO.id);
+  private async createSession(
+    @Body('id', new ParseUUIDPipe({ version: '4' })) uuid: string,
+  ) {
+    let product: Product = this.productService.findOneById(uuid);
     let session: Stripe.Response<Stripe.Checkout.Session> = await this.stripeService.createSession(
       product,
     );
