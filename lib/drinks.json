@@ -1,0 +1,302 @@
+[
+  {
+    "imageUri": "001-kombucha.svg",
+    "name": "kombucha",
+    "description": "kombucha",
+    "price": 700
+  },
+  {
+    "imageUri": "002-milk box.svg",
+    "name": "milk box",
+    "description": "milk box",
+    "price": 300
+  },
+  {
+    "imageUri": "003-coffee.svg",
+    "name": "coffee",
+    "description": "coffee",
+    "price": 400
+  },
+  {
+    "imageUri": "004-wine.svg",
+    "name": "wine",
+    "description": "wine",
+    "price": 1200
+  },
+  {
+    "imageUri": "005-wine.svg",
+    "name": "wine",
+    "description": "wine",
+    "price": 2500
+  },
+  {
+    "imageUri": "006-champagne.svg",
+    "name": "champagne",
+    "description": "champagne",
+    "price": 4000
+  },
+  {
+    "imageUri": "007-martini.svg",
+    "name": "martini",
+    "description": "martini",
+    "price": 1400
+  },
+  {
+    "imageUri": "008-cosmopolitan.svg",
+    "name": "cosmopolitan",
+    "description": "cosmopolitan",
+    "price": 1600
+  },
+  {
+    "imageUri": "009-energy drink.svg",
+    "name": "energy drink",
+    "description": "energy drink",
+    "price": 300
+  },
+  {
+    "imageUri": "010-cappuccino.svg",
+    "name": "cappuccino",
+    "description": "cappuccino",
+    "price": 600
+  },
+  {
+    "imageUri": "011-cola.svg",
+    "name": "cola",
+    "description": "cola",
+    "price": 200
+  },
+  {
+    "imageUri": "012-cola.svg",
+    "name": "cola",
+    "description": "cola",
+    "price": 300
+  },
+  {
+    "imageUri": "013-matcha.svg",
+    "name": "matcha",
+    "description": "matcha",
+    "price": 400
+  },
+  {
+    "imageUri": "014-chocolate milk.svg",
+    "name": "chocolate milk",
+    "description": "chocolate milk",
+    "price": 600
+  },
+  {
+    "imageUri": "015-mimosa.svg",
+    "name": "mimosa",
+    "description": "mimosa",
+    "price": 800
+  },
+  {
+    "imageUri": "016-soda.svg",
+    "name": "soda",
+    "description": "soda",
+    "price": 300
+  },
+  {
+    "imageUri": "017-sangria.svg",
+    "name": "sangria",
+    "description": "sangria",
+    "price": 1200
+  },
+  {
+    "imageUri": "018-beer.svg",
+    "name": "beer",
+    "description": "beer",
+    "price": 800
+  },
+  {
+    "imageUri": "019-lemonade.svg",
+    "name": "lemonade",
+    "description": "lemonade",
+    "price": 400
+  },
+  {
+    "imageUri": "020-tea.svg",
+    "name": "tea",
+    "description": "tea",
+    "price": 600
+  },
+  {
+    "imageUri": "021-milkshake.svg",
+    "name": "milkshake",
+    "description": "milkshake",
+    "price": 800
+  },
+  {
+    "imageUri": "022-coffee.svg",
+    "name": "coffee",
+    "description": "coffee",
+    "price": 400
+  },
+  {
+    "imageUri": "023-bubble tea.svg",
+    "name": "bubble tea",
+    "description": "bubble tea",
+    "price": 800
+  },
+  {
+    "imageUri": "024-mojito.svg",
+    "name": "mojito",
+    "description": "mojito",
+    "price": 1600
+  },
+  {
+    "imageUri": "025-latte macchiato.svg",
+    "name": "latte macchiato",
+    "description": "latte macchiato",
+    "price": 600
+  },
+  {
+    "imageUri": "026-infusion.svg",
+    "name": "infusion",
+    "description": "infusion",
+    "price": 500
+  },
+  {
+    "imageUri": "027-horchata.svg",
+    "name": "horchata",
+    "description": "horchata",
+    "price": 800
+  },
+  {
+    "imageUri": "028-Ice Tea.svg",
+    "name": "Ice Tea",
+    "description": "Ice Tea",
+    "price": 600
+  },
+  {
+    "imageUri": "029-smoothie.svg",
+    "name": "smoothie",
+    "description": "smoothie",
+    "price": 800
+  },
+  {
+    "imageUri": "030-beer.svg",
+    "name": "beer",
+    "description": "beer",
+    "price": 1200
+  },
+  {
+    "imageUri": "031-milk.svg",
+    "name": "milk",
+    "description": "milk",
+    "price": 500
+  },
+  {
+    "imageUri": "032-milkshake.svg",
+    "name": "milkshake",
+    "description": "milkshake",
+    "price": 600
+  },
+  {
+    "imageUri": "033-strawberry milk.svg",
+    "name": "strawberry milk",
+    "description": "strawberry milk",
+    "price": 600
+  },
+  {
+    "imageUri": "034-whiskey.svg",
+    "name": "whiskey",
+    "description": "whiskey",
+    "price": 1200
+  },
+  {
+    "imageUri": "035-dalgona.svg",
+    "name": "dalgona",
+    "description": "dalgona",
+    "price": 800
+  },
+  {
+    "imageUri": "036-smoothie.svg",
+    "name": "smoothie",
+    "description": "smoothie",
+    "price": 800
+  },
+  {
+    "imageUri": "037-iced coffee.svg",
+    "name": "iced coffee",
+    "description": "iced coffee",
+    "price": 300
+  },
+  {
+    "imageUri": "038-juice box.svg",
+    "name": "juice box",
+    "description": "juice box",
+    "price": 400
+  },
+  {
+    "imageUri": "039-cocktail.svg",
+    "name": "cocktail",
+    "description": "cocktail",
+    "price": 1600
+  },
+  {
+    "imageUri": "040-soda.svg",
+    "name": "soda",
+    "description": "soda",
+    "price": 600
+  },
+  {
+    "imageUri": "041-tea pot.svg",
+    "name": "tea pot",
+    "description": "tea pot",
+    "price": 600
+  },
+  {
+    "imageUri": "042-punch.svg",
+    "name": "punch",
+    "description": "punch",
+    "price": 6000
+  },
+  {
+    "imageUri": "043-ramune.svg",
+    "name": "ramune",
+    "description": "ramune",
+    "price": 800
+  },
+  {
+    "imageUri": "044-coconut.svg",
+    "name": "coconut",
+    "description": "coconut",
+    "price": 200
+  },
+  {
+    "imageUri": "045-margarita.svg",
+    "name": "margarita",
+    "description": "margarita",
+    "price": 1600
+  },
+  {
+    "imageUri": "046-hot chocolate.svg",
+    "name": "hot chocolate",
+    "description": "hot chocolate",
+    "price": 600
+  },
+  {
+    "imageUri": "047-water.svg",
+    "name": "water",
+    "description": "water",
+    "price": 200
+  },
+  {
+    "imageUri": "048-cocktail shaker.svg",
+    "name": "cocktail shaker",
+    "description": "cocktail shaker",
+    "price": 1600
+  },
+  {
+    "imageUri": "049-cream soda.svg",
+    "name": "cream soda",
+    "description": "cream soda",
+    "price": 800
+  },
+  {
+    "imageUri": "050-orange juice.svg",
+    "name": "orange juice",
+    "description": "orange juice",
+    "price": 600
+  }
+]

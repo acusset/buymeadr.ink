@@ -1,0 +1,15 @@
+{
+  "short_name": "buymeadr.ink",
+  "name": "Buy me a drink",
+  "icons": [
+    {
+      "src": "images/drinks/030-beer.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
