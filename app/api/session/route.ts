@@ -1,9 +1,7 @@
 import { getSiteUrl } from "@/lib/getSiteUrl";
+import { stripe } from "@/lib/stripe";
 import type { Product } from "@/lib/types";
 import { NextResponse } from "next/server";
-import Stripe from "stripe";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY!);
 
 export async function POST(request: Request) {
   const product: Product = await request.json();
@@ -28,8 +26,8 @@ export async function POST(request: Request) {
       },
     ],
     mode: "payment",
-    success_url: `${siteUrl}?success=true`,
-    cancel_url: `${siteUrl}?success=false`,
+    success_url: `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${siteUrl}/cancel`,
   });
 
   return NextResponse.json({ url: session.url });

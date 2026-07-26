@@ -49,6 +49,10 @@ describe("POST /api/session", () => {
             }),
           }),
         ],
+        success_url: expect.stringContaining(
+          "/success?session_id={CHECKOUT_SESSION_ID}",
+        ),
+        cancel_url: expect.stringContaining("/cancel"),
       }),
     );
   });

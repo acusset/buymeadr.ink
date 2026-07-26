@@ -30,7 +30,7 @@ export default function RootLayout({
             </div>
           </div>
         </section>
-        {children}
+        <main className="site-main">{children}</main>
         <footer className="footer is-small">
           <div className="content has-text-centered">
             <p>
