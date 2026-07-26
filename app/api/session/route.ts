@@ -1,11 +1,12 @@
+import type { Product } from "@/lib/types";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import type { Product } from "@/lib/types";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY!);
 
 export async function POST(request: Request) {
   const product: Product = await request.json();
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
   const session = await stripe.checkout.sessions.create({
@@ -16,6 +17,9 @@ export async function POST(request: Request) {
           currency: "sgd",
           product_data: {
             name: product.name,
+            metadata: {
+              productId: product.id,
+            },
           },
           unit_amount: product.price,
         },

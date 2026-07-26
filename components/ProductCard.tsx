@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import type { Product } from "@/lib/types";
 
 async function fetchSession(product: Product): Promise<{ url?: string }> {
@@ -18,32 +17,31 @@ async function fetchSession(product: Product): Promise<{ url?: string }> {
     });
 }
 
+const handleClick = async ({
+  id,
+  name,
+  description,
+  price,
+  imageUri,
+}: Product) => {
+  const session = await fetchSession({ id, name, description, price, imageUri });
+
+  if (session.url) {
+    window.location.href = session.url;
+  }
+};
+
 export default function ProductCard({
+  id,
   name,
   description,
   price,
   imageUri,
 }: Product) {
-  const [hover, setHover] = useState(false);
-
-  const handleClick = async () => {
-    const session = await fetchSession({ name, description, price, imageUri });
-
-    if (session.url) {
-      window.location.href = session.url;
-    }
-  };
-
-  const background = hover
-    ? "has-background-white-bis"
-    : "has-background-white-ter";
-
   return (
     <div
-      className={"card " + background}
-      onClick={handleClick}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      className="card"
+      onClick={handleClick.bind(null, { id, name, description, price, imageUri })}
     >
       <div className="card-image">
         <figure className="image is-square">
