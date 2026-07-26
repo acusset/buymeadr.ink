@@ -1,3 +1,8 @@
+:root {
+  --card-bg: whitesmoke; /* has-background-white-ter */
+  --card-bg-hover: #fafafa; /* has-background-white-bis */
+}
+
 html {
   background-image: url("./background.svg");
   background-repeat: no-repeat;
@@ -13,8 +18,10 @@ html {
 
 .card {
   height: 100%;
+  background-color: var(--card-bg);
 }
 
 .card:hover {
   cursor: pointer;
+  background-color: var(--card-bg-hover);
 }

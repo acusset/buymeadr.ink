@@ -18,6 +18,7 @@ describe("ProductCard", () => {
   it("renders the product name and formatted price", () => {
     render(
       <ProductCard
+        id="001-kombucha"
         name="kombucha"
         description="kombucha"
         price={700}
@@ -37,6 +38,7 @@ describe("ProductCard", () => {
 
     render(
       <ProductCard
+        id="001-kombucha"
         name="kombucha"
         description="kombucha"
         price={700}
@@ -57,6 +59,7 @@ describe("ProductCard", () => {
       expect.objectContaining({
         method: "POST",
         body: JSON.stringify({
+          id: "001-kombucha",
           name: "kombucha",
           description: "kombucha",
           price: 700,
