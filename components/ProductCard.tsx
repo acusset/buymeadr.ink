@@ -1,21 +1,8 @@
 "use client";
 
+import { fetchSession } from "@/actions/fetchSession";
 import type { Product } from "@/lib/types";
-
-async function fetchSession(product: Product): Promise<{ url?: string }> {
-  return fetch("/api/session", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(product),
-  })
-    .then((response) => response.json())
-    .catch((error) => {
-      console.log(error);
-      return {};
-    });
-}
+import Image from "next/image";
 
 const handleClick = async ({
   id,
@@ -24,7 +11,13 @@ const handleClick = async ({
   price,
   imageUri,
 }: Product) => {
-  const session = await fetchSession({ id, name, description, price, imageUri });
+  const session = await fetchSession({
+    id,
+    name,
+    description,
+    price,
+    imageUri,
+  });
 
   if (session.url) {
     window.location.href = session.url;
@@ -38,15 +31,24 @@ export default function ProductCard({
   price,
   imageUri,
 }: Product) {
+  const displayPrice = (price / 100).toFixed(2);
+
   return (
     <div
       className="card"
-      onClick={handleClick.bind(null, { id, name, description, price, imageUri })}
+      onClick={handleClick.bind(null, {
+        id,
+        name,
+        description,
+        price,
+        imageUri,
+      })}
     >
       <div className="card-image">
         <figure className="image is-square">
-          <img
+          <Image
             className="p-3"
+            fill
             src={"/images/drinks/" + imageUri}
             alt={description}
           />
@@ -57,7 +59,7 @@ export default function ProductCard({
           {name}
         </p>
         <p className="subtitle has-text-danger has-text-weight-semibold has-text-centered is-size-6-mobile is-size-5-desktop is-size-5-fullhd">
-          S${(price / 100).toFixed(2)}
+          S${displayPrice}
         </p>
       </div>
     </div>
