@@ -1,3 +1,4 @@
+import { getSiteUrl } from "@/lib/getSiteUrl";
 import type { Product } from "@/lib/types";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
@@ -7,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_API_KEY!);
 export async function POST(request: Request) {
   const product: Product = await request.json();
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+  const siteUrl = getSiteUrl();
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
