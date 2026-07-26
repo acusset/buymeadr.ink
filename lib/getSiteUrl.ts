@@ -1,4 +1,5 @@
 export function getSiteUrl(): string {
+  console.log(process.env)
   if (process.env.VERCEL_ENV === "production") {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
   }
